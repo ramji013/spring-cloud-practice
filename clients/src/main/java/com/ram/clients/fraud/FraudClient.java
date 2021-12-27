@@ -1,4 +1,4 @@
-package com.ram.clients;
+package com.ram.clients.fraud;
 
 
 import org.springframework.cloud.openfeign.FeignClient;

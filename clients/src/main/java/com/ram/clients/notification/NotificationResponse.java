@@ -1,2 +1,4 @@
-package com.ram.clients.notification;public class NotificationResponse {
+package com.ram.clients.notification;
+
+public record NotificationResponse (Boolean isNotificationSend) {
 }

@@ -1,6 +1,6 @@
 package com.ram.fraud.controller;
 
-import com.ram.fraud.bean.FraudCheckResponse;
+import com.ram.clients.fraud.FraudCheckResponse;
 import com.ram.fraud.service.FraudCheckService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
