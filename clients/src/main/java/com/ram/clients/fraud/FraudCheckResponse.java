@@ -1,4 +1,4 @@
-package com.ram.fraud.bean;
+package com.ram.clients;
 
 public record FraudCheckResponse(Boolean isFraudster) {
 
