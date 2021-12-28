@@ -9,7 +9,9 @@
 		<module>eurekaserver</module>
 		<module>clients</module>
         <module>notification</module>
-    </modules>
+        <module>apigateway</module>
+		<module>amqp</module>
+	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>

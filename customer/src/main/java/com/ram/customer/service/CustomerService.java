@@ -1,5 +1,6 @@
 package com.ram.customer.service;
 
+import com.ram.amqp.RabbitMQMessageProducer;
 import com.ram.clients.fraud.FraudCheckResponse;
 import com.ram.clients.fraud.FraudClient;
 import com.ram.clients.notification.NotificationClient;
@@ -25,6 +26,9 @@ public class CustomerService {
     @Autowired
     private NotificationClient notificationClient;
 
+    @Autowired
+    private RabbitMQMessageProducer rabbitMQMessageProducer;
+
     public void register(CustomerRequest customerRequest) {
         Customer customer = Customer.builder().firstName(customerRequest.firstName())
                 .lastName(customerRequest.lastName()).email(customerRequest.email()).build();
@@ -37,6 +41,6 @@ public class CustomerService {
             notificationClient.sendNotification(customer.getId());
         }
 
-
+        rabbitMQMessageProducer.publish(customer.getId(), "internal.exchange", "internal.notification.routing-key");
     }
 }
